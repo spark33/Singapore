@@ -6,9 +6,6 @@ class Map extends Component {
     return (
       <div className="Map">
         <img src={ require("./map.svg") } alt="Map of Singapore" />
-        <div className="location-pins">
-          all the pins!
-        </div>
       </div>
     );
   }
