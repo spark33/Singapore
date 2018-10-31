@@ -5,7 +5,7 @@ class Map extends Component {
   render() {
     return (
       <div className="Map">
-        map
+        <img src={ require("./map.svg") } alt="Map of Singapore" />
       </div>
     );
   }

@@ -1,7 +1,20 @@
 .App {
-  padding: 3% 5%;
+  max-height: 100vh;
+}
+
+header {
+  position: absolute;
+  top: 2%;
+  left: 4%;
 }
 
 .Map {
-  margin: 0 auto;
+  max-height: 100vh;
+}
+
+.Map img {
+  position: absolute;
+  top: 10%;
+  left: 15%;
+  width: 70%;
 }
