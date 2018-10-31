@@ -115,6 +115,14 @@ main.sidebar-open {
   padding: 3vh 3vw;
 }
 
+.sidebar.open .sidebar-close-button {
+  color: grey;
+  position: absolute;
+  top: 3vh;
+  right: 3vw;
+  font-size: 2em;
+}
+
 .sidebar span {
   display: inline-block;
   background: blue;

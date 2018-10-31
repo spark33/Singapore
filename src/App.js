@@ -16,6 +16,7 @@ class App extends Component {
     this.state = { selectedMode: "tourist" };
     this.handlePinClick = this.handlePinClick.bind(this);
     this.switchMode = this.switchMode.bind(this);
+    this.closeSidebar = this.closeSidebar.bind(this);
   }
 
   handlePinClick(pinIndex) {
@@ -28,6 +29,10 @@ class App extends Component {
 
   switchMode(newMode) {
     this.setState({ selectedMode: newMode });
+  }
+
+  closeSidebar() {
+    this.setState({ selectedLocation: null });
   }
 
   render() {
@@ -44,6 +49,7 @@ class App extends Component {
         </main>
         <Sidebar 
           index={ this.state.selectedLocation + 1 }
+          closeSidebar={ this.closeSidebar }
           location={ locations[this.state.selectedMode][this.state.selectedLocation] } />
         <div className="current-mode">
           <h5>
