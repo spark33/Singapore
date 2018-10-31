@@ -13,7 +13,7 @@ class App extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { selectedMode: "tourist" };
+    this.state = { selectedMode: "tourist", selectedLocation: null };
     this.handlePinClick = this.handlePinClick.bind(this);
     this.switchMode = this.switchMode.bind(this);
     this.closeSidebar = this.closeSidebar.bind(this);
@@ -38,7 +38,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <main className={ this.state.selectedLocation ? "sidebar-open" : ""}>
+        <main className={ this.state.selectedLocation !== null ? "sidebar-open" : "sidebar-closed" }>
           <Header />
           <div className="map-container">
             <Map />
@@ -53,7 +53,7 @@ class App extends Component {
           location={ locations[this.state.selectedMode][this.state.selectedLocation] } />
         <div className="current-mode">
           <h5>
-            Currently viewing: 
+            Currently viewing: Favorite
             <ModeSelector 
               options={ Object.keys(locations) }
               selectedMode={ this.state.selectedMode }

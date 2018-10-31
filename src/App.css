@@ -1,5 +1,5 @@
 body {
-  /*overflow: hidden;*/
+  overflow: hidden;
 }
 
 .App {
@@ -59,6 +59,14 @@ h5 {
   color: #333;
   font-size: 1.5em;
   margin-bottom: 10px;
+}
+
+main {
+  transition: 0.8s all ease;
+}
+
+main.sidebar-closed {
+  transform: translateX(0);
 }
 
 main.sidebar-open {
@@ -139,7 +147,7 @@ main.sidebar-open {
 
 .current-mode {
   position: absolute;
-  bottom: 0;
+  bottom: 2vh;
   left: 0;
   padding: 3vh 3vw;
 }
@@ -150,6 +158,8 @@ main.sidebar-open {
   border-bottom: 2px solid;
   margin: 0 5px;
   text-align: center;
+  box-sizing: content-box;
+  background: white;
 }
 
 .mode-options:after {
