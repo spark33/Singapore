@@ -10,33 +10,33 @@ class App extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = { dataset: "personal", locations: locations.personal };
     this.handlePinClick = this.handlePinClick.bind(this);
   }
 
   handlePinClick(pinIndex) {
-    if(locations[pinIndex] == this.state.selectedLocation) {
+    if(pinIndex == this.state.selectedLocation) {
       this.setState({ selectedLocation: null })
     } else {
-      this.setState({ selectedLocation: locations[pinIndex] });
+      this.setState({ selectedLocation: pinIndex });
     }
   }
 
   render() {
-
     return (
       <div className="App">
-        <main>
+        <main className={ this.state.selectedLocation ? "sidebar-open" : ""}>
           <Header />
           <div className="map-container">
             <Map />
             <LocationPins 
               handlePinClick={ this.handlePinClick }
-              locations = { locations } />
+              locations = { this.state.locations } />
           </div>
         </main>
         <Sidebar 
-          location={ this.state.selectedLocation } />
+          index={ this.state.selectedLocation }
+          location={ locations[this.state.selectedLocation] } />
       </div>
     );
   }

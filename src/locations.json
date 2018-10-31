@@ -1,14 +1,24 @@
-[
-	{
-		"x": 10,
-		"y": 10,
-		"name": "Test Location",
-		"blurb": "This is a test description of the test location."
-	},
-	{
-		"x": 40,
-		"y": 60,
-		"name": "High School Home",
-		"blurb": "Home description"
-	}
-]
+{
+	"personal": [
+		{
+			"x": 40,
+			"y": 60,
+			"name": "Mirage Tower",
+			"blurb": "Home description"
+		},
+		{
+			"x": 95,
+			"y": 50,
+			"name": "Changi Airport",
+			"blurb": "airport description"
+		}
+	],
+	"tourist": [
+		{
+			"x": 95,
+			"y": 50,
+			"name": "Changi Airport",
+			"blurb": "airport description"
+		}
+	]
+}

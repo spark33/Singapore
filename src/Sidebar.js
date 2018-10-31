@@ -8,7 +8,10 @@ class Sidebar extends Component {
   	if(this.props.location) { 
   		return (
 	      <div className="sidebar open">
-	      	<h3> { this.props.location.name } </h3>
+	      	<h3> 
+	      		<span>{ this.props.index + 1 }</span>
+	      		{ this.props.location.name } 
+	      	</h3>
 	      	<p> { this.props.location.blurb } </p>
 	      </div>
     	);

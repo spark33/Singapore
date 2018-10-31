@@ -22,7 +22,7 @@ class Pin extends Component {
            style={ this.styles }
            onClick={ this.handleClick } >
         <img src={ require("./map-pin.png") } alt="Map Pin" />
-        <h5>{ this.props.name }</h5>
+        <h4>{ this.props.name }</h4>
       </div>
     );
   }
