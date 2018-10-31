@@ -13,7 +13,7 @@ class App extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { selectedMode: "tourist", selectedLocation: null };
+    this.state = { selectedMode: "personal", selectedLocation: null };
     this.handlePinClick = this.handlePinClick.bind(this);
     this.switchMode = this.switchMode.bind(this);
     this.closeSidebar = this.closeSidebar.bind(this);

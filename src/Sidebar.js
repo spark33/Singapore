@@ -12,6 +12,7 @@ class Sidebar extends Component {
 	      		<span>{ this.props.index }</span>
 	      		{ this.props.location.name } 
 	      	</h3>
+	      	<img src={ this.props.location.image } alt="location image"/>
 	      	<p> { this.props.location.blurb } </p>
 	      	<a className="sidebar-close-button" onClick={ this.props.closeSidebar }>×</a>
 	      </div>
