@@ -7,15 +7,15 @@ import Header from './Header.js';
 import Map from './Map.js';
 import LocationPins from './LocationPins.js';
 import Sidebar from './Sidebar.js';
-import SourceSelector from './SourceSelector.js';
+import ModeSelector from './ModeSelector.js';
 
 class App extends Component {
 
   constructor(props) {
     super(props);
-    let startingMode = "personal";
-    this.state = { selectedMode: startingMode };
+    this.state = { selectedMode: "tourist" };
     this.handlePinClick = this.handlePinClick.bind(this);
+    this.switchMode = this.switchMode.bind(this);
   }
 
   handlePinClick(pinIndex) {
@@ -24,6 +24,10 @@ class App extends Component {
     } else {
       this.setState({ selectedLocation: pinIndex });
     }
+  }
+
+  switchMode(newMode) {
+    this.setState({ selectedMode: newMode });
   }
 
   render() {
@@ -41,9 +45,17 @@ class App extends Component {
         <Sidebar 
           index={ this.state.selectedLocation + 1 }
           location={ locations[this.state.selectedMode][this.state.selectedLocation] } />
-        <SourceSelector 
-          options={ Object.keys(locations) }
-        />
+        <div className="current-mode">
+          <h5>
+            Currently viewing: 
+            <ModeSelector 
+              options={ Object.keys(locations) }
+              selectedMode={ this.state.selectedMode }
+              switchMode={ this.switchMode }
+            />
+            locations.
+          </h5>
+        </div>
       </div>
     );
   }

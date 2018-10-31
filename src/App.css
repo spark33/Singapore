@@ -7,8 +7,8 @@ body {
   padding: 2vh 0;
 }
 
-* {
-  transition: all .8s ease;
+a {
+  cursor: pointer;
 }
 
 h1 {
@@ -77,6 +77,7 @@ main.sidebar-open {
 
 .Pin {
   position: absolute;
+  cursor: pointer;
 }
 
 .Pin * {
@@ -105,6 +106,7 @@ main.sidebar-open {
   background: white;
   border-left: 1px solid grey;
   padding: 3vh 0;
+  transition: all .8s ease;
 }
 
 .sidebar.open {
@@ -127,9 +129,37 @@ main.sidebar-open {
   margin-right: 15px;
 }
 
-.source-selector {
+.current-mode {
   position: absolute;
   bottom: 0;
   left: 0;
   padding: 3vh 3vw;
+}
+
+.mode-selector {
+  display: inline-block;
+  padding-bottom: 3px;
+  border-bottom: 2px solid;
+  margin: 0 5px;
+  text-align: center;
+}
+
+.mode-options:after {
+  content: '▼';
+  top: -5px;
+}
+
+.mode-options a {
+  display: block;
+  border: 1px solid;
+  padding: 2px 4px;
+  margin: 0;
+}
+
+.mode-options.showing {
+  visibility: visible;
+}
+
+.mode-options.hidden {
+  visibility: hidden;
 }
