@@ -9,6 +9,7 @@ class LocationPins extends Component {
       <div className="location-pins">
         {
           this.props.locations.map(function(location, index) {
+            console.log(location);
             return <Pin 
                       key = { index }
                       index = { index }

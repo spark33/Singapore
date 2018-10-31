@@ -5,11 +5,31 @@ class Pin extends Component {
 
   constructor(props) {
     super(props);
-    this.styles = {
-      top: props.y + '%',
-      left: props.x + '%',
+    this.state = {
+      styles: {
+        top: this.props.y + '%',
+        left: this.props.x + '%',
+      }
     };
     this.handleClick = this.handleClick.bind(this);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      styles: {
+        top: nextProps.y + '%',
+        left: nextProps.x + '%',
+      }
+    });
+  }
+
+  setStyles() {
+    this.setState({
+      styles: {
+        top: this.props.y + '%',
+        left: this.props.x + '%',
+      }
+    });
   }
 
   handleClick() {
@@ -19,7 +39,7 @@ class Pin extends Component {
   render() {
     return (
       <div className="Pin" 
-           style={ this.styles }
+           style={ this.state.styles }
            onClick={ this.handleClick } >
         <img src={ require("./map-pin.png") } alt="Map Pin" />
         <h4>{ this.props.name }</h4>
