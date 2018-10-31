@@ -26,13 +26,15 @@ class App extends Component {
 
     return (
       <div className="App">
-        <Header />
-        <div className="map-container">
-          <Map />
-          <LocationPins 
-            handlePinClick={ this.handlePinClick }
-            locations = { locations } />
-        </div>
+        <main>
+          <Header />
+          <div className="map-container">
+            <Map />
+            <LocationPins 
+              handlePinClick={ this.handlePinClick }
+              locations = { locations } />
+          </div>
+        </main>
         <Sidebar 
           location={ this.state.selectedLocation } />
       </div>
