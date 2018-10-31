@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Map from './Map.js';
+import LocationPins from './LocationPins.js';
 
 class App extends Component {
   render() {
@@ -14,7 +15,10 @@ class App extends Component {
             Some description of Singapore and what it means to me
           </p>
         </header>
-        <Map />
+        <div className="map-container">
+          <Map />
+          <LocationPins />
+        </div>
       </div>
     );
   }
