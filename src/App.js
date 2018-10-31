@@ -1,24 +1,40 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Header from './Header.js';
 import Map from './Map.js';
 import LocationPins from './LocationPins.js';
+import Sidebar from './Sidebar.js';
+import locations from './locations.json'
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = { sidebarOpen: false };
+    this.handlePinClick = this.handlePinClick.bind(this);
+  }
+
+  handlePinClick(pinIndex) {
+    let location = locations[pinIndex];
+    this.setState({
+      sidebarOpen: !this.state.sidebarOpen,
+      selectedLocation: location
+    });
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <h5>Explore:</h5>
-          <h1>Singapore</h1>
-          <p>
-            Some description of Singapore and what it means to me
-          </p>
-        </header>
+        <Header />
         <div className="map-container">
           <Map />
-          <LocationPins />
+          <LocationPins 
+            handlePinClick={ this.handlePinClick }
+            locations = { locations } />
         </div>
+        <Sidebar 
+          open={ this.state.sidebarOpen }
+          location={ this.state.selectedLocation } />
       </div>
     );
   }

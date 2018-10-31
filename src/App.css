@@ -40,3 +40,17 @@
   font-size: 30px;
   line-height: 100%;
 }
+
+.sidebar {
+  display: none;
+}
+
+.sidebar.open {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 25vw;
+}
+

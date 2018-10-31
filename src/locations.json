@@ -2,6 +2,13 @@
 	{
 		"x": 10,
 		"y": 10,
-		"name": "Test Location"
+		"name": "Test Location",
+		"blurb": "This is a test description of the test location."
+	},
+	{
+		"x": 40,
+		"y": 60,
+		"name": "High School Home",
+		"blurb": "Home description"
 	}
 ]
