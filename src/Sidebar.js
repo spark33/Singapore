@@ -9,7 +9,7 @@ class Sidebar extends Component {
   		return (
 	      <div className="sidebar open">
 	      	<h3> 
-	      		<span>{ this.props.index + 1 }</span>
+	      		<span>{ this.props.index }</span>
 	      		{ this.props.location.name } 
 	      	</h3>
 	      	<p> { this.props.location.blurb } </p>

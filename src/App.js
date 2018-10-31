@@ -1,21 +1,25 @@
 import React, { Component } from 'react';
 import './App.css';
+
+import locations from './locations.json'
+
 import Header from './Header.js';
 import Map from './Map.js';
 import LocationPins from './LocationPins.js';
 import Sidebar from './Sidebar.js';
-import locations from './locations.json'
+import SourceSelector from './SourceSelector.js';
 
 class App extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { dataset: "personal", locations: locations.personal };
+    let startingMode = "personal";
+    this.state = { selectedMode: startingMode };
     this.handlePinClick = this.handlePinClick.bind(this);
   }
 
   handlePinClick(pinIndex) {
-    if(pinIndex == this.state.selectedLocation) {
+    if(pinIndex === this.state.selectedLocation) {
       this.setState({ selectedLocation: null })
     } else {
       this.setState({ selectedLocation: pinIndex });
@@ -31,12 +35,15 @@ class App extends Component {
             <Map />
             <LocationPins 
               handlePinClick={ this.handlePinClick }
-              locations = { this.state.locations } />
+              locations = { locations[this.state.selectedMode] } />
           </div>
         </main>
         <Sidebar 
-          index={ this.state.selectedLocation }
-          location={ locations[this.state.selectedLocation] } />
+          index={ this.state.selectedLocation + 1 }
+          location={ locations[this.state.selectedMode][this.state.selectedLocation] } />
+        <SourceSelector 
+          options={ Object.keys(locations) }
+        />
       </div>
     );
   }
