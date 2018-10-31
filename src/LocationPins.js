@@ -4,10 +4,6 @@ import Pin from './Pin.js';
 
 class LocationPins extends Component {
 
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div className="location-pins">

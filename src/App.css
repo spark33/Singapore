@@ -1,17 +1,19 @@
 .App {
   max-height: 100vh;
-  padding: 2% 4%;
+  padding: 2vh 3vw;
+}
+
+.Header {
+  height: 16vh;
 }
 
 .map-container {
-  height: 100vh;
   width: 70%;
   margin: 0 auto;
   position: relative;
 }
 
 .Map img {
-  position: absolute;
   width: 100%;
 }
 

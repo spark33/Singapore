@@ -10,19 +10,20 @@ class App extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { sidebarOpen: false };
+    this.state = {};
     this.handlePinClick = this.handlePinClick.bind(this);
   }
 
   handlePinClick(pinIndex) {
-    let location = locations[pinIndex];
-    this.setState({
-      sidebarOpen: !this.state.sidebarOpen,
-      selectedLocation: location
-    });
+    if(locations[pinIndex] == this.state.selectedLocation) {
+      this.setState({ selectedLocation: null })
+    } else {
+      this.setState({ selectedLocation: locations[pinIndex] });
+    }
   }
 
   render() {
+
     return (
       <div className="App">
         <Header />
@@ -33,7 +34,6 @@ class App extends Component {
             locations = { locations } />
         </div>
         <Sidebar 
-          open={ this.state.sidebarOpen }
           location={ this.state.selectedLocation } />
       </div>
     );
