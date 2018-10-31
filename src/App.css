@@ -22,3 +22,21 @@
   width: 100%;
   height: 100%;
 }
+
+.Pin {
+  position: absolute;
+}
+
+.Pin * {
+  display: inline-block;
+}
+
+.Pin img {
+  width: 50px;
+}
+
+.Pin h5 {
+  color: #333;
+  font-size: 30px;
+  line-height: 100%;
+}
