@@ -14,8 +14,10 @@ class Sidebar extends Component {
 	      		{ this.props.location.name } 
 	      	</h3>
 	      	<img src={ this.props.location.image } alt="location image"/>
-	      	<p> { ReactHtmlParser(this.props.location.blurb) } </p>
-	      	<a className="sidebar-close-button" onClick={ this.props.closeSidebar }>×</a>
+	      	<div className="sidebar-content">
+	      		<p> { ReactHtmlParser(this.props.location.blurb) } </p>
+	      		<a className="sidebar-close-button" onClick={ this.props.closeSidebar }>×</a>
+	      	</div>
 	      </div>
     	);
   	} else {

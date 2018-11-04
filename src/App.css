@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   overflow: hidden;
 }
@@ -111,9 +115,11 @@ main.sidebar-open {
   top: 0;
   right: -30vw;
   height: 100vh;
+  overflow-y: scroll;
   background: white;
   border-left: 1px solid grey;
   padding: 3vh 0;
+  box-sizing: content-box;
   transition: all .8s ease;
 }
 
@@ -125,6 +131,14 @@ main.sidebar-open {
   visibility: visible;
   right: 0;
   padding: 3vh 3vw;
+}
+
+.sidebar-content {
+  margin-bottom: 10vh;
+}
+
+.sidebar p {
+  line-height: 30px;
 }
 
 .sidebar.open .sidebar-close-button {
@@ -147,6 +161,7 @@ main.sidebar-open {
   vertical-align: middle;
   color: white;
   margin-right: 15px;
+  box-sizing: content-box;
 }
 
 .current-mode {

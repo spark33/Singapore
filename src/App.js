@@ -17,6 +17,7 @@ class App extends Component {
     this.handlePinClick = this.handlePinClick.bind(this);
     this.switchMode = this.switchMode.bind(this);
     this.closeSidebar = this.closeSidebar.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   handlePinClick(pinIndex) {
@@ -31,6 +32,12 @@ class App extends Component {
     this.setState({ selectedMode: newMode });
   }
 
+  handleClick() {
+    if(this.state.selectedLocation !== null) {
+      this.closeSidebar()
+    }
+  }
+
   closeSidebar() {
     this.setState({ selectedLocation: null });
   }
@@ -38,7 +45,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <main className={ this.state.selectedLocation !== null ? "sidebar-open" : "sidebar-closed" }>
+        <main onClick={ this.handleClick } className={ this.state.selectedLocation !== null ? "sidebar-open" : "sidebar-closed" }>
           <Header />
           <div className="map-container">
             <Map />
